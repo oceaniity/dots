@@ -1,0 +1,25 @@
+{
+	"font_options":
+	[
+		"no-antialias"
+	],
+	"font_size": 8,
+	"rulers":
+	[
+		80,
+		100
+	],
+	"translate_tabs_to_spaces": true,
+    "spell_check": true,
+    "always_show_minimap_viewport": true,
+    "caret_style": "phase",
+    "highlight_line": true,
+    "caret_extra_width": 2,
+    "scroll_past_end": false,
+    "trim_trailing_whitespace_on_save": true,
+    "ensure_newline_at_eof_on_save": true,
+    "auto_complete_delay": 200,
+    "auto_complete_commit_on_tab": true,
+    "copy_with_empty_selection": false,
+    "drag_text": false
+}
