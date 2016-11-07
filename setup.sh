@@ -8,16 +8,17 @@ then PROFPATH=$(tr < profiles.ini -s '\n' '|' | sed 's/\[Profile[0-9]\]/\x0/g; s
 else PROFPATH=$(grep 'Path=' profiles.ini | sed 's/^Path=//')
 fi
 
-echo Removing user.js from $PROFPATH
-rm ~/.mozilla/firefox/$PROFPATH/user.js
-
 echo Linking user.js to $PROFPATH
+rm ~/.mozilla/firefox/$PROFPATH/user.js
 ln -s $DIR/firefox/user.js ~/.mozilla/firefox/$PROFPATH/user.js
 
-echo Removing original Sublime preferences...
-rm ~/.config/sublime-text-3/Packages/User/Preferences.sublime-settings
-rm ~/.config/sublime-text-3/Packages/User/Distraction\ Free.sublime-settings
+echo Linking Sublime theme package
+rm -rf ~/.config/sublime-text-3/Packages/Pisco
+ln -s $DIR/sublime/Pisco ~/.config/sublime-text-3/Packages/Pisco
 
 echo Linking new Sublime preferences...
+rm ~/.config/sublime-text-3/Packages/User/Preferences.sublime-settings
+rm ~/.config/sublime-text-3/Packages/User/Distraction\ Free.sublime-settings
 ln -s $DIR/sublime/Preferences.sublime-settings ~/.config/sublime-text-3/Packages/User/Preferences.sublime-settings
 ln -s $DIR/sublime/Distraction\ Free.sublime-settings ~/.config/sublime-text-3/Packages/User/Distraction\ Free.sublime-settings
+

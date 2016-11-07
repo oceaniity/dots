@@ -1,3 +1,5 @@
 {
+    // I'll have none of this pesky ruler business while in distraction free
+    // mode.
     "rulers": []
 }
