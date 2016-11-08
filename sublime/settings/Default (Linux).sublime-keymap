@@ -1,12 +1,45 @@
 [
     {
-        "keys": ["ctrl+space"],
-        "command": "chain",
+        "keys": ["alt+space", "alt+w"],
+        "command": "toggle_distraction_free"
+    },
+    {
+        "keys": ["alt+space", "alt+a"],
+        "command": "save"
+    },
+    {
+        "keys": ["alt+space", "alt+n"],
+        "command": "new_file"
+    },
+    {
+        "keys": ["alt+space", "alt+e"],
+        "command": "move_to",
         "args": {
-            "commands": [
-                ["toggle_menu"],
-                ["toggle_distraction_free"]
-            ]
+            "to": "eof",
+            "extend": false
         }
+    },
+    {
+        "keys": ["alt+space", "alt+s"],
+        "command": "move_to",
+        "args": {
+            "to": "bof",
+            "extend": false
+        }
+    },
+    {
+        "keys": ["alt+space", "alt+c"],
+        "command": "show_overlay",
+        "args": {
+            "overlay": "command_palette"
+        }
+    },
+    {
+        "keys": ["alt+space", "alt+o"],
+        "command": "prompt_open_file"
+    },
+    {
+        "keys": ["alt+space", "alt+q"],
+        "command": "exit"
     }
 ]
