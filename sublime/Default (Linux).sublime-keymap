@@ -1,0 +1,12 @@
+[
+    {
+        "keys": ["ctrl+space"],
+        "command": "chain",
+        "args": {
+            "commands": [
+                ["toggle_menu"],
+                ["toggle_distraction_free"]
+            ]
+        }
+    }
+]
