@@ -1,51 +1,55 @@
 {
 
+
     /** Theme **/
     "color_scheme": "Packages/Pisco/Pisco.tmTheme",
 
+
     /** Visible UI settings **/
-    
+    // Make the margins non-existent.
+    "margin": 0,
     // Being able to see overall file position without scrollbars is useful.
     "always_show_minimap_viewport": true,
-    
     // I have trouble seeing the caret a lot so this helps me.
     "caret_extra_width": 2,
-    
     // Because why have a blinking cursor when you can have a phased one?
     "caret_style": "phase",
-    
     // Not really sure if this does anything on Linux but doesn't hurt to leave
     // there.
     "font_options": ["no-antialias"],
-    
     // Small font size because anything else is giant.
     "font_size": 8,
-    
     // The cursor is often times not enough to figure out where I am.
     "highlight_line": true,
-    
+    // Highlight modified tabs to make changes across multiple tabs more visible
+    "highlight_modified_tabs": true,
     // Use 80 for documentation blocks and 100 for code blocks. No wider.
     "rulers": [80, 100],
-    
+    // Force global word wrap
+    "word_wrap": "enabled",
+    // Wrap-width so that 100 is wrapped by default.
+    "wrap_width": 100,
     // Overlay the scroll bars wherever possible. Requires restart on Linux.
     "overlay_scroll_bars": "enabled",
+    // Don't need definition stuff
+    "show_definitions": false,
+    // Don't show those pesky x buttons
+    "show_tab_close_buttons": false,
+    // Let me know if something has a funky encoding
+    "show_encoding": true,
+
 
     /** Application behavior **/
-    
     // Because it's import that return actually returns...
     "auto_complete_commit_on_tab": true,
-    
     // Don't spam me with auto complete popups all the time.
     "auto_complete_delay": 200,
-    
     // Nothing worse than an accidental control C and suddenly you're pasting in
     // your entire file into a dialog or form.
     "copy_with_empty_selection": false,
-    
     // You shouldn't be using a mouse but in the event you accidentally do... 
     // turn this off.
     "drag_text": false,
-    
     // Normally vintage mode is turned off but I know the shortcuts and embrace
     // the keyboard, so turn it back on. Ignore a bunch of syntax I don't use.
     "ignored_packages": [
@@ -76,25 +80,24 @@
         "TCL",
         "Textile"
     ],
-
     // This is a dumb feature.
     "scroll_past_end": false,
-
+    // Slow down scrolling a lil' bit
+    "scroll_speed": 0.8,
     // Who lives life without spell checking?
     "spell_check": true,
+    // No need to index files... not using goto definitions anyways
+    "index_files": false,
+
 
     /** Whitespace and tabs **/
-
     // This is covered in most coding standards... it really should be default
     // by now.
     "ensure_newline_at_eof_on_save": true,
-    
     // As above.
     "tab_size": 4,
-    
     // As above.
     "translate_tabs_to_spaces": true,
-    
     // I mean why even have this off in the first place?
     "trim_trailing_whitespace_on_save": true
 }
