@@ -77,7 +77,7 @@ user_pref("services.sync.fxa.privacyURL", "");
 user_pref("services.sync.fxa.termsURL", "");
 user_pref("services.sync.jpake.serverURL", "");
 user_pref("security.ssl.errorReporting.url", "");
-user_pref("services.sync.privacyURL", "")
+user_pref("services.sync.privacyURL", "");
 user_pref("services.sync.serverURL", "");
 user_pref("services.sync.statusURL", "");
 user_pref("services.sync.syncKeyHelpURL", "");
@@ -86,7 +86,7 @@ user_pref("startup.homepage_override_url", "");
 user_pref("startup.homepage_welcome_url", "");
 user_pref("startup.homepage_welcome_url.additional", "");
 user_pref("toolkit.crashreporter.infoURL", "");
-user_pref("toolkit.telemetry,infoURL", "");
+user_pref("toolkit.telemetry.infoURL", "");
 user_pref("toolkit.telemetry.server", "");
 user_pref("xpinstall.signatures.devInfoURL", "");
 
