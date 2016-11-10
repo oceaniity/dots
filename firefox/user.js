@@ -222,6 +222,7 @@ user_pref("network.dns.disablePrefetchFromHTTPS", true);
 
 // # SSL encryption behaviors
 user_pref("security.ssl.disable_session_identifiers", true);
+user_pref("security.ssl.require_safe_negotiation", true);
 user_pref("security.ssl.errorReporting.automatic", false);
 user_pref("security.ssl.errorReporting.enabled", false);
 user_pref("security.ssl.treat_unsafe_negotiation_as_broken", true);
@@ -304,11 +305,25 @@ user_pref("browser.slowStartup.notificationDisabled", true);
 user_pref("browser.slowStartup.samples", 0);
 
 // # General behavior
+user_pref("browser.sessionstore.max_resumed_crashes", 0);
+user_pref("browser.sessionstore.resume_from_crash", false);
+user_pref("toolkit.startup.max_resumed_crashes", 0);
 user_pref("browser.offline-apps.notify", true);
 user_pref("browser.backspace_action", 2);
 user_pref("general.warnOnAboutConfig", false);
+user_pref("browser.urlbar.autoFill", false);
+user_pref("browser.urlbar.autoFill.typed", false);
+user_pref("browser.urlbar.autocomplete.enabled", false);
+user_pref("browser.urlbar.delay", 999999999);
 user_pref("browser.urlbar.clickSelectsAll", true);
 user_pref("browser.urlbar.doubleClickSelectsAll", false);
+user_pref("browser.urlbar.suggest.history", false);
+user_pref("browser.urlbar.suggest.bookmark", false);
+user_pref("browser.urlbar.suggest.openpage", false);
+user_pref("browser.urlbar.suggest.searches", false);
+user_pref("browser.urlbar.maxCharsForSearchSuggestions", 0);
+user_pref("browser.urlbar.formatting.enabled", false);
+user_pref("browser.urlbar.trimURLs", false);
 user_pref("accessibility.blockautorefresh", true);
 user_pref("browser.sessionstore.interval", 300000);
 user_pref("browser.shell.checkDefaultBrowser", false);
@@ -326,7 +341,6 @@ user_pref("nglayout.enable_drag_images", false);
 // # CSS settings
 user_pref("layout.css.background-blend-mode.enabled", false);
 user_pref("layout.css.filters.enabled", false);
-user_pref("layout.css.font-loading-api.enabled", false);
 user_pref("layout.css.report_errors", false);
 
 // # Network performance
@@ -338,12 +352,16 @@ user_pref("network.protocol-handler.external.ms-windows-store", false);
 user_pref("network.proxy.type", 0);
 
 // # Fonts
+user_pref("layout.css.font-loading-api.enabled", false);
+user_pref("layout.css.prefixes.font-features", false);
 user_pref("gfx.downloadable_fonts.disable_cache", true);
 user_pref("gfx.downloadable_fonts.enabled", false);
 user_pref("gfx.downloadable_fonts.woff2.enabled", false);
 user_pref("gfx.font_loader.delay", 10000000);
+user_pref("pdfjs.disableFontFace", true);
 
 // # Graphical performance
+user_pref("webgl.disabled", true);
 user_pref("layers.componentalpha.enabled", false);
 user_pref("layers.deaa.enabled", false);
 user_pref("image.downscale-during-decode.enabled", false);
@@ -353,6 +371,12 @@ user_pref("nglayout.initialpaint.delay", 10);
 user_pref("ui.submenuDelay", 75);
 user_pref("layers.acceleration.disabled", true);
 user_pref("browser.fullscreen.animate", false);
+
+// # Plugins
+user_pref("browser.download.show_plugins_in_list", false);
+user_pref("plugin.default.state", 0);
+
+// # Canvas fingerprinting
 
 // # Testing pref for syntax errors.
 user_pref("oceaniity.testing", 1);
