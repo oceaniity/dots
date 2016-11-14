@@ -66,11 +66,6 @@ user_pref("gecko.handlerService.schemes.mailto.1.uriTemplate", "");
 user_pref("gecko.handlerService.schemes.webcal.0.uriTemplate", "");
 user_pref("geo.wifi.uri", "https://127.0.0.1");
 user_pref("lightweightThemes.getMoreURL", "");
-user_pref("loop.facebook.fallbackUrl", "");
-user_pref("loop.facebook.shareUrl", "");
-user_pref("loop.feedback.formURL", "");
-user_pref("loop.feedback.manualFormURL", "");
-user_pref("loop.server", "");
 user_pref("media.gmp-manager.url", "");
 user_pref("plugins.update.url", "");
 user_pref("privacy.trackingprotection.introURL", "");
@@ -209,20 +204,20 @@ user_pref("dom.webnotifications.serviceworker.enabled", false);
 user_pref("dom.workers.enabled", false);
 
 // # Extensions
-user_pref("extensions.blocklist.enabled", true);
-user_pref("extensions.dta.maxautoretries", -1);
-user_pref("extensions.dta.maxchunks", 10);
-user_pref("extensions.dta.resumeonerror", true);
-user_pref("extensions.dta.serverlimit.perserver", 1);
-user_pref("extensions.e10sBlocksEnabling", false);
-user_pref("extensions.getAddons.cache.enabled", false);
-user_pref("extensions.interposition.enabled", false);
-user_pref("extensions.interposition.prefetching", false);
-user_pref("extensions.pocket.enabled", false);
-user_pref("extensions.pocket.oAuthConsumerKey", "");
-user_pref("extensions.pocket.site", "");
-user_pref("extensions.update.autoUpdateDefault", false);
-user_pref("extensions.update.enabled", false);
+// user_pref("extensions.blocklist.enabled", true);
+// user_pref("extensions.dta.maxautoretries", -1);
+// user_pref("extensions.dta.maxchunks", 10);
+// user_pref("extensions.dta.resumeonerror", true);
+// user_pref("extensions.dta.serverlimit.perserver", 1);
+// user_pref("extensions.e10sBlocksEnabling", false);
+// user_pref("extensions.getAddons.cache.enabled", false);
+// user_pref("extensions.interposition.enabled", false);
+// user_pref("extensions.interposition.prefetching", false);
+// user_pref("extensions.pocket.enabled", false);
+// user_pref("extensions.pocket.oAuthConsumerKey", "");
+// user_pref("extensions.pocket.site", "");
+// user_pref("extensions.update.autoUpdateDefault", false);
+// user_pref("extensions.update.enabled", false);
 
 // # WebRTC
 user_pref("media.peerconnection.enabled", false);
@@ -273,12 +268,6 @@ user_pref("javascript.options.mem.high_water_mark", 32);
 user_pref("javascript.options.mem.max", -1);
 user_pref("javascript.options.showInConsole", false);
 user_pref("javascript.use_us_english_locale", true);
-
-// # Firefox hello (deprecated)
-user_pref("loop.enabled", false);
-user_pref("loop.facebook.appId", "");
-user_pref("loop.facebook.enabled", false);
-user_pref("loop.logDomains", false);
 
 // # Geo logging
 user_pref("geo.enabled", false);
@@ -431,7 +420,7 @@ user_pref("layout.css.scroll-behavior.property-enabled", false);
 user_pref("layout.css.scroll-snap.enabled", false);
 user_pref("layout.css.text-combine-upright.enabled", false);
 user_pref("layout.css.unset-value.enabled", false);
-user_pref("layout.css.variables.enabled", false);
+user_pref("layout.css.variables.enabled", true); // false breaks tab view
 user_pref("layout.css.vertical-text.enabled", false);
 user_pref("layout.css.visited_links_enabled", false);
 user_pref("layout.float-fragments-inside-column.enabled", false);
@@ -512,21 +501,23 @@ user_pref("layout.css.prefixes.font-features", false);
 user_pref("pdfjs.disableFontFace", true);
 
 // # Graphical performance
+user_pref("apz.allow_checkerboarding", false);
+user_pref("apz.paint_skipping.enabled", false);
 user_pref("apz.peek_messages.enabled", false);
 user_pref("browser.fullscreen.animate", false);
 user_pref("gestures.enable_single_finger_input", false);
-user_pref("gfx.direct2d.disabled", true);
+// user_pref("gfx.direct2d.disabled", true);
 user_pref("image.cache.size", 52428);
 user_pref("image.downscale-during-decode.enabled", false);
 user_pref("image.mem.max_decoded_image_kb", 52000);
 user_pref("image.multithreaded_decoding.limit", 2);
-user_pref("layers.acceleration.disabled", true);
-user_pref("layers.acceleration.force-enabled", false);
-user_pref("layers.componentalpha.enabled", false);
-user_pref("layers.deaa.enabled", false);
-user_pref("nglayout.initialpaint.delay", 10);
+// user_pref("layers.acceleration.disabled", true);
+// user_pref("layers.acceleration.force-enabled", false);
+// user_pref("layers.componentalpha.enabled", false);
+// user_pref("layers.deaa.enabled", false);
+// user_pref("nglayout.initialpaint.delay", 10);
 user_pref("ui.submenuDelay", 75);
-user_pref("webgl.disabled", true);
+// user_pref("webgl.disabled", true);
 
 // # Mouse
 user_pref("middlemouse.paste", false);
