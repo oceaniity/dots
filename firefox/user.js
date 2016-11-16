@@ -173,6 +173,8 @@ user_pref("dom.event.clipboardevents.enabled", false);
 user_pref("dom.event.contextmenu.enabled", false);
 user_pref("dom.gamepad.enabled", false);
 user_pref("dom.idle-observers-api.enabled", false);
+user_pref("dom.image.picture.enabled", false);
+user_pref("dom.image.srcset.enabled", false);
 user_pref("dom.indexedDB.logging.details", false);
 user_pref("dom.indexedDB.logging.enabled", false);
 user_pref("dom.ipc.plugins.flash.subprocess.crashreporter.enabled", false);
@@ -191,7 +193,7 @@ user_pref("dom.push.udp.wakeupEnabled", false);
 user_pref("dom.push.userAgentID", "");
 user_pref("dom.serviceWorkers.enabled", false);
 user_pref("dom.serviceWorkers.openWindow.enabled", false);
-user_pref("dom.storage.enabled", false);
+user_pref("dom.storage.enabled", true);
 user_pref("dom.telephony.enabled", false);
 user_pref("dom.use_watchdog", false);
 user_pref("dom.vibrator.enabled", false);
@@ -204,20 +206,41 @@ user_pref("dom.webnotifications.serviceworker.enabled", false);
 user_pref("dom.workers.enabled", false);
 
 // # Extensions
-// user_pref("extensions.blocklist.enabled", true);
-// user_pref("extensions.dta.maxautoretries", -1);
-// user_pref("extensions.dta.maxchunks", 10);
-// user_pref("extensions.dta.resumeonerror", true);
-// user_pref("extensions.dta.serverlimit.perserver", 1);
+user_pref("extensions.blocklist.enabled", false);
 // user_pref("extensions.e10sBlocksEnabling", false);
-// user_pref("extensions.getAddons.cache.enabled", false);
-// user_pref("extensions.interposition.enabled", false);
-// user_pref("extensions.interposition.prefetching", false);
-// user_pref("extensions.pocket.enabled", false);
-// user_pref("extensions.pocket.oAuthConsumerKey", "");
+user_pref("extensions.getAddons.cache.enabled", false);
+user_pref("extensions.interposition.enabled", false);
+user_pref("extensions.interposition.prefetching", false);
+user_pref("extensions.pocket.enabled", false);
+user_pref("extensions.pocket.oAuthConsumerKey", "");
 // user_pref("extensions.pocket.site", "");
-// user_pref("extensions.update.autoUpdateDefault", false);
-// user_pref("extensions.update.enabled", false);
+user_pref("extensions.update.autoUpdateDefault", false);
+user_pref("extensions.update.enabled", false);
+user_pref("extensions.update.interval", 999999);
+
+// # DownThemAll
+// retry failed downloads every 1 minute
+user_pref("extensions.dta.autoretryinterval", 60);
+// rename on conflicting file name
+user_pref("extensions.dta.conflictresolution", 0);
+// hide items from the context menu (and rely on the save prompt instead)
+user_pref("extensions.dta.ctxmenu", "0,0,0");
+// infinite download retries
+user_pref("extensions.dta.maxautoretries", -1);
+// Maximum 10 segments per download
+user_pref("extensions.dta.maxchunks", 10);
+// Set default permissions to rw for group
+user_pref("extensions.dta.permissions", 432);
+// Resume on failed download
+user_pref("extensions.dta.resumeonerror", true);
+// Limit to one download per server at a time
+user_pref("extensions.dta.serverlimit.perserver", 1);
+// Turn off chime on done
+user_pref("extensions.dta.sounds.done", false);
+// Don't scrape for text links
+user_pref("extensions.dta.textlinks", false);
+// Downloads time out after 2 minutes of no data
+user_pref("extensions.dta.timeout", 120);
 
 // # WebRTC
 user_pref("media.peerconnection.enabled", false);
@@ -301,13 +324,28 @@ user_pref("browser.tabs.warnOnOpen", false);
 
 // # Media settings
 user_pref("media.autoplay.enabled", false);
+user_pref("media.decoder.heuristic.dormant.enabled", false);
+user_pref("media.eme.apiVisible", false);
+user_pref("media.encoder.webm.enabled", false);
 user_pref("media.getusermedia.screensharing.allowed_domains", "");
 user_pref("media.getusermedia.screensharing.enabled", false);
+user_pref("media.gmp-widevinecdm.enabled", false);
+user_pref("media.gmp-widevinecdm.visible", false);
+user_pref("media.gmp.trial-create.enabled", false);
 user_pref("media.mediasource.webm.enabled", true);
 user_pref("media.navigator.enabled", false);
+user_pref("media.navigator.video.enabled", false);
+user_pref("media.ogg.enabled", false);
+user_pref("media.opus.enabled", false);
+user_pref("media.raw.enabled", false);
 user_pref("media.video_stats.enabled", false);
+user_pref("media.wave.decoder.enabled", false);
+user_pref("media.wave.enabled", false);
+user_pref("media.webm.enabled", false);
 user_pref("media.webspeech.recognition.enable", false);
 user_pref("media.webspeech.synth.enabled", false);
+user_pref("media.webvtt.enabled", false);
+user_pref("narrate.enabled", false);
 
 // # General privacy settings
 user_pref("beacon.enabled", false);
@@ -318,7 +356,10 @@ user_pref("captivedetect.maxRetryCount", 0);
 user_pref("clipboard.autocopy", false);
 user_pref("device.sensors.enabled", false);
 user_pref("device.storage.enabled", false);
+user_pref("general.platform.override", "Win32");
 user_pref("general.useragent.locale", "en-US");
+user_pref("general.useragent.override", "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36");
+user_pref("image.http.accept", "image/webp,image/*,*/*;q=0.8");
 user_pref("intl.accept_languages", "en-US, en");
 user_pref("intl.locale.matchOS", false);
 user_pref("places.history.enabled", false);
@@ -342,6 +383,8 @@ user_pref("browser.cache.use_new_backend", 1);
 user_pref("browser.chrome.favicons", false);
 user_pref("browser.chrome.site_icons", false);
 user_pref("browser.chrome.toolbar_tips", false);
+// Don't show the tip when customizing firefox layout / toolbars
+user_pref("browser.customizemode.tip0.shown", true);
 user_pref("browser.display.show_image_placeholders", false);
 user_pref("browser.download.manager.addToRecentDocs", false);
 user_pref("browser.fixup.alternate.enabled", false);
@@ -391,9 +434,18 @@ user_pref("offline-apps.allow_by_default", false);
 user_pref("pdfjs.disabled", true);
 user_pref("plugins.update.notifyUser", false);
 user_pref("prompts.tab_modal.enabled", false);
+// user_pref("reader.parse-on-load.enabled", false);
+// Do not automatically fill forms
 user_pref("signon.autofillForms", false);
+// Not sure what this does but I turned it off anyway
+user_pref("signon.schemeUpgrades", false);
+// If autocomplete is off it still stores data...
 user_pref("signon.storeWhenAutocompleteOff", false);
+// Do not remember passwords (I use lastpass)
+user_pref("signons.rememberSignons", false);
+// This will make you vulnerable to a certain exploit. Pro users only.
 user_pref("stagefright.disabled", true);
+// Save us some memory by not recovering from crashes - important tabs should be bookmarks.
 user_pref("toolkit.startup.max_resumed_crashes", 0);
 
 // # CSS settings
@@ -433,6 +485,7 @@ user_pref("network.dns.blockDotOnion", true);
 user_pref("network.dns.disableIPv6", true);
 user_pref("network.dns.offline-localhost", false);
 user_pref("network.dnsCacheEntries", 0);
+user_pref("network.http.accept.default", "application/xml,application/xhtml+xml,text/html;q=0.9, text/plain;q=0.8,image/png,*/*;q=0.5");
 user_pref("network.http.pipelining", true);
 user_pref("network.http.redirection-limit", 5);
 user_pref("network.http.rendering-critical-requests-prioritization", false);
@@ -450,19 +503,6 @@ user_pref("network.proxy.type", 0);
 user_pref("network.warnOnAboutNetworking", false);
 user_pref("offline.autoDetect", false);
 user_pref("toolkit.networkmanager.disable", true);
-
-// # Media playback
-user_pref("media.decoder.heuristic.dormant.enabled", false);
-user_pref("media.encoder.webm.enabled", false);
-user_pref("media.navigator.video.enabled", false);
-user_pref("media.ogg.enabled", false);
-user_pref("media.opus.enabled", false);
-user_pref("media.raw.enabled", false);
-user_pref("media.wave.decoder.enabled", false);
-user_pref("media.wave.enabled", false);
-user_pref("media.webm.enabled", false);
-user_pref("media.webvtt.enabled", false);
-user_pref("narrate.enabled", false);
 
 // # Accessibility
 user_pref("accessibility.ipc_architecture.enabled", false);
@@ -506,18 +546,20 @@ user_pref("apz.paint_skipping.enabled", false);
 user_pref("apz.peek_messages.enabled", false);
 user_pref("browser.fullscreen.animate", false);
 user_pref("gestures.enable_single_finger_input", false);
-// user_pref("gfx.direct2d.disabled", true);
+user_pref("gfx.direct2d.disabled", true);
 user_pref("image.cache.size", 52428);
 user_pref("image.downscale-during-decode.enabled", false);
 user_pref("image.mem.max_decoded_image_kb", 52000);
 user_pref("image.multithreaded_decoding.limit", 2);
-// user_pref("layers.acceleration.disabled", true);
-// user_pref("layers.acceleration.force-enabled", false);
-// user_pref("layers.componentalpha.enabled", false);
-// user_pref("layers.deaa.enabled", false);
-// user_pref("nglayout.initialpaint.delay", 10);
+user_pref("gl.msaa-level", 1);
+user_pref("layers.acceleration.disabled", true);
+user_pref("layers.acceleration.force-enabled", false);
+user_pref("layers.async-pan-zoom.enabled", false);
+user_pref("layers.componentalpha.enabled", false);
+user_pref("layers.deaa.enabled", false);
+user_pref("nglayout.initialpaint.delay", 10);
 user_pref("ui.submenuDelay", 75);
-// user_pref("webgl.disabled", true);
+user_pref("webgl.disabled", true);
 
 // # Mouse
 user_pref("middlemouse.paste", false);
@@ -535,6 +577,25 @@ user_pref("canvas.capturestream.enabled", false);
 user_pref("canvas.filters.enabled", false);
 user_pref("canvas.focusring.enabled", false);
 user_pref("canvas.path.enabled", false);
+
+// # Sync engine settings
+user_pref("services.sync.engine.addons", false);
+user_pref("services.sync.engine.bookmarks", false);
+user_pref("services.sync.engine.history", false);
+user_pref("services.sync.engine.passwords", false);
+user_pref("services.sync.engine.prefs", false);
+user_pref("services.sync.engine.tabs", false);
+user_pref("services.sync.log.appender.file.logOnError", false);
+
+// # Reader
+// Don't show that annoying 'how to use reader' popup
+user_pref("browser.reader.detectedFirstArticle", true);
+// Sepia is love, sepia is life.
+user_pref("reader.color_scheme", "sepia");
+user_pref("reader.content_width", 5);
+user_pref("reader.font_size", 3);
+user_pref("reader.font_type", "serif");
+user_pref("reader.line_height", 3);
 
 // # Testing pref for syntax errors.
 user_pref("oceaniity.testing", 1);
